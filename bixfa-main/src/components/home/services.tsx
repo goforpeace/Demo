@@ -6,10 +6,10 @@ export default function Services() {
       {/* Heading & CTA */}
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center mb-12 gap-6">
         <div>
-          <h2 className="text-4xl font-extrabold mb-2">
+          <h2 className="font-serif text-4xl font-extrabold mb-2">
             Our Main Design Services
           </h2>
-          <p className="text-4xl font-extrabold">For Customers</p>
+          <p className="font-serif text-4xl font-extrabold">For Customers</p>
         </div>
         <button className="flex items-center px-4 py-3 bg-white text-black text-sm font-semibold rounded-tl-4xl rounded-br-4xl shadow hover:scale-105 transition absolute top-[35%]">
           <span className="italic font-semibold">View All Service</span>

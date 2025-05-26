@@ -1,5 +1,6 @@
 import { ChevronDown, ChevronLeft, ChevronRight } from "lucide-react";
 import React from "react";
+import { Link } from "react-router-dom"; // Import Link from react-router-dom
 
 export default function Header() {
   return (
@@ -9,19 +10,34 @@ export default function Header() {
         <div className="flex-1 flex flex-col items-start">
           <span className="text-base mb-1">Websites with our</span>
           <div className="flex items-center w-[95%] gap-0">
-          <div className="h-[1px] bg-white my-2 w-full"></div>
-          <ChevronLeft className="ml"/>
+            <div className="h-[1px] bg-white my-2 w-full"></div>
+            <ChevronLeft className="ml" />
           </div>
 
           <div className="flex justify-between px-7 w-[92%]">
-            {["Home", "Portfolio", "About Us"].map((item) => (
-              <div
-                key={item}
-                className="text-base cursor-pointer flex items-center hover:text-[#f0a500] relative"
-              >
-                {item} <span className="text-xs ml-1"><ChevronDown/></span>
-              </div>
-            ))}
+            {/* Home Link */}
+            <Link
+              to="/"  // Use the Link component to navigate to the Home (landing) page
+              className="text-base cursor-pointer flex items-center hover:text-[#f0a500] relative"
+            >
+              Home <span className="text-xs ml-1"><ChevronDown /></span>
+            </Link>
+
+            {/* Portfolio Link */}
+            <div
+              key="Portfolio"
+              className="text-base cursor-pointer flex items-center hover:text-[#f0a500] relative"
+            >
+              Portfolio <span className="text-xs ml-1"><ChevronDown /></span>
+            </div>
+
+            {/* About Us Link */}
+            <Link
+              to="/about-us"  // Use the Link component to navigate to the About Us page
+              className="text-base cursor-pointer flex items-center hover:text-[#f0a500] relative"
+            >
+              About Us <span className="text-xs ml-1"><ChevronDown /></span>
+            </Link>
           </div>
         </div>
 
@@ -38,13 +54,12 @@ export default function Header() {
           >
             Download Our Sustainability Report
           </a>
-          
-          <div className="flex items-center w-[86%] gap-0">
-          <div className="bg-amber-100">
-          </div>
-          <ChevronRight className="mx-0 px-0"/>
 
-          <div className="h-[1px] bg-white my-2 mx-0 w-full"></div>
+          <div className="flex items-center w-[86%] gap-0">
+            <div className="bg-amber-100"></div>
+            <ChevronRight className="mx-0 px-0" />
+
+            <div className="h-[1px] bg-white my-2 mx-0 w-full"></div>
           </div>
 
           <div className="flex justify-between px-7 w-[82%]">
@@ -53,7 +68,7 @@ export default function Header() {
                 key={item}
                 className="text-base cursor-pointer items-center flex hover:text-[#f0a500] relative"
               >
-                {item} <span className="text-xs ml-1"><ChevronDown/></span>
+                {item} <span className="text-xs ml-1"><ChevronDown /></span>
               </div>
             ))}
           </div>

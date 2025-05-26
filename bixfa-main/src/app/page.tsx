@@ -1,4 +1,8 @@
-'use client'
+// src/app/page.tsx
+
+'use client'; // Add this directive to make the component a Client Component
+
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import AwardsTimeline from "@/components/home/awards-timeline";
 import Blog from "@/components/home/blog";
 import Explore from "@/components/home/explore";
@@ -9,21 +13,35 @@ import ProjectsShowcase from "@/components/home/ProjectsShowcase";
 import Services from "@/components/home/services";
 import Testimonials from "@/components/home/testimonials";
 import WebLayout from "@/components/layouts/web.layout";
-import { Button } from "@heroui/react";
-export default function Home() {
+import AboutUs from "@/pages/about-us/AbouUs";  // Import About Us page
+
+export default function Page() {
   return (
-    <>
+    <Router>
       <WebLayout>
-        <Hero/>
-        <Services/>
-        <GraphicWebSection/>
-        <Explore/>
-        <ProjectsShowcase/>
-        <ProjectsSecondSection/>
-        <AwardsTimeline/>
-        <Testimonials/>
-        <Blog/>
+        <Routes>
+          {/* Home Route */}
+          <Route
+            path="/"
+            element={
+              <>
+                <Hero />
+                <Services />
+                <GraphicWebSection />
+                <Explore />
+                <ProjectsShowcase />
+                <ProjectsSecondSection />
+                <AwardsTimeline />
+                <Testimonials />
+                <Blog />
+              </>
+            }
+          />
+          
+          {/* About Us Route */}
+          <Route path="/about-us" element={<AboutUs />} />
+        </Routes>
       </WebLayout>
-    </>
+    </Router>
   );
 }

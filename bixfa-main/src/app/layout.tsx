@@ -1,3 +1,4 @@
+
 import type { Metadata } from "next";
 import { Inter, Inter_Tight } from "next/font/google";
 import "../styles/globals.css";
